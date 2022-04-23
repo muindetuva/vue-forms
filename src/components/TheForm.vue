@@ -94,7 +94,7 @@
     </div>
 
     <div class="form-control">
-      <rating-control></rating-control>
+      <rating-control v-model="rating"></rating-control>
     </div>
 
     <div class="form-control">
@@ -128,6 +128,7 @@ export default {
       how: null,
       confirm: false,
       userNameValidity: 'pending',
+      rating: null,
     };
   },
   methods: {
@@ -148,6 +149,9 @@ export default {
 
       console.log('Confirm', this.confirm);
       this.confirm = false;
+
+      console.log('rating', this.rating);
+      this.rating = null;
     },
     validateInput() {
       if (this.userName.trim() === '') {
